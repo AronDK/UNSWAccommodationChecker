@@ -1,4 +1,4 @@
-# UNSWAccommodationChecker
+# UNSW Accommodation Checker
 Scraper to check when UNSW accommodation applications are avaliable for the next immediate year
 
 Current implementation focuses on UNSW Terraces website, will run on startup of WSL or vLab. 
