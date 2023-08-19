@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import axios, { AxiosResponse } from 'axios';
 import cheerio from 'cheerio';
 import jquery from 'jquery';
-import config from './config.json';
+import config from './config.json'; 
 
 const app = express();
 app.use(express.json());
