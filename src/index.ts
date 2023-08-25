@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import axios, { AxiosResponse } from 'axios';
 import cheerio, { load } from 'cheerio';
 import config from './config.json'; 
+import email, { sendNotif } from './email';
 
 const app = express();
 app.use(express.json());
@@ -28,6 +29,8 @@ axios(config.url)
             res.res23 = text23 || res.res23;
         });
         console.log(res);
+        sendNotif(res);
+        
     }).catch((err: Error) => console.log(err));
 
 app.listen(PORT, () => console.log('Server started on port ' + PORT));
