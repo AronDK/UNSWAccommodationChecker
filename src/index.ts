@@ -9,7 +9,8 @@ app.use(express.json());
 
 const PORT: number = parseInt(process.env.PORT || config.port);
 
-axios(config.url)
+function scrape() {
+    axios(config.url)
     .then((response: AxiosResponse) => {
         const html = response.data;
         const $ = load(html); 
@@ -32,5 +33,7 @@ axios(config.url)
         sendNotif(res);
         
     }).catch((err: Error) => console.log(err));
+}
 
 app.listen(PORT, () => console.log('Server started on port ' + PORT));
+setInterval(scrape, 600000); // Time in milliseconds

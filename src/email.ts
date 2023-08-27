@@ -4,7 +4,7 @@ const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user:"a.d.keness@gmail.com",
-        pass: "NotShown"
+        pass: "qlefyulvgcvybrso"
     }
 });
 
@@ -18,15 +18,6 @@ const mailOptions = {
 export function sendNotif(response: any) {
     if (response.res24) {
         mailOptions.text = "Applications are now open for 2024!";
-        transporter.sendMail(mailOptions, function(error, info) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log("Email sent: " + info.response);
-            }
-        });
-    } else if (response.res23) {
-        mailOptions.text = "Applications are now open for 2023!";
         transporter.sendMail(mailOptions, function(error, info) {
             if (error) {
                 console.log(error);
